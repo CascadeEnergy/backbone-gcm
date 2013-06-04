@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
 
+  // Prime to be made into a grunt-plugin.
   var bowerjson = grunt.file.readJSON('bower.json');
   var devDependencies = '';
 

@@ -52,6 +52,13 @@ then the mixin is available as global variable `gcm`
 
 ### [Install](id:Install)
 
+1. Traditional: clone the repo, and take `backbone-gmc.js` or `backbone-gmc.min.js` files out and put them wherever you keep your bakbone mixins.
+2. Or I've made this package available via the bower package manager.
+
+    $ bower install backbone-gcm --save
+
+The `--save` flag will save backbone-gcm as a dependency in your `bower.json`
+
 ### [Example](id:example)
 
 There is a small how-to in this repo in at [example/example.html](https://github.com/CascadeEnergy/backbone-gcm/example/example.html). It doesn't do much, except let you click on items and "destroy" them, but it might give you some idea how to use this mixin.
@@ -82,14 +89,15 @@ For good information on javascript and Backbone garbage collection:
 
 ### [Tests](id:tests)
 
-Tests are in the `test/` directory, they are written with mocha, and run via `testrunner.html`
+Tests are in the `test/` directory, they are written with mocha, and run via `testrunner.html`. To get the dependencies for testing, you must have bower installed: `npm install -g bower`.
   
     $ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
     $ cd backbone-gcm/
     $ npm install
-    $ bower install
+    $ grunt shell:bower-dev
     $ node ./util/web-server.js
 
+`grunt shell:bower-dev` is my very hacky way of installing the bower dev dependencies.
 Open your browser to <http://localhost:8000/testrunner.html>
 
 **OR**  
@@ -98,7 +106,7 @@ Run them with PhantomJS on the CLI!!!!
     $ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
     $ cd backbone-gcm/
     $ npm install
-    $ bower install
+    $ grunt shell:bower-dev
 
 Start a server in one terminal window.
 
