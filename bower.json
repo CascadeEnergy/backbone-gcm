@@ -5,6 +5,8 @@
   "ignore": [
     "lib",
     "test",
+    "example",
+    "util",
     "node_modules",
     "components",
     "Gruntfile.js",
