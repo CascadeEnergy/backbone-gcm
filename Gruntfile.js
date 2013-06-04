@@ -1,15 +1,6 @@
 module.exports = function(grunt) {
 
-  // Prime to be made into a grunt-plugin.
-  var bowerjson = grunt.file.readJSON('bower.json');
-  var devDependencies = '';
-
-  for (var dep in bowerjson.devDependencies) {
-    devDependencies += dep + ' ';
-  }
-
   grunt.initConfig({
-    deps: devDependencies,
     copy: {
       dist: {
         files: [
@@ -31,9 +22,6 @@ module.exports = function(grunt) {
           stdout: true,
           stderr: true
         }
-      },
-      'bower-dev': {
-        command: 'bower install <% deps %>'
       }
     },
     nodemon: {
