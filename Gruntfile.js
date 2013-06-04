@@ -31,10 +31,22 @@ module.exports = function(grunt) {
         }
       }
     },
+    jshint: {
+      options: {
+        laxcomma:true
+      },
+      tests: {
+        options: {
+          '-W030': true, // to.be.true syntax
+        },
+        src: ['test/**/*.js']
+      },
+      lib: ['Gruntfile.js', 'lib/**/*.js']
+    }, 
     watch: {
       js: {
         files: ['**/*.js'],
-        tasks: ['shell:mocha-phantomjs']
+        tasks: ['jshint', 'shell:mocha-phantomjs']
       }
     }
   });
@@ -44,7 +56,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   grunt.registerTask('build', ['copy', 'uglify']);
   grunt.registerTask('default', ['nodemon']);
-}
+};

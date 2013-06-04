@@ -9,7 +9,6 @@ define([
 
   describe('backbone-gcm', function() {
     var HeroModel 
-      , miyagi
       , HeroView
       , view;
 
@@ -18,6 +17,8 @@ define([
 
     // View class extending gcm
     HeroView = Backbone.View.extend({
+      className: 'hero-view',
+
       chopcalled: false,
 
       events: {
@@ -31,14 +32,13 @@ define([
     _.extend(HeroView.prototype, gcm);
 
     beforeEach(function() {
-      miyagi = new HeroModel({name: 'Mr. Miyagi'})
+      var miyagi = new HeroModel({name: 'Mr. Miyagi'});
       view = new HeroView({model: miyagi});
     });
 
     afterEach(function() {
       view.off();
       view = undefined;
-      miyagi = undefined;
     });
 
     describe('.destroy', function() {
@@ -66,23 +66,6 @@ define([
         view.destroy();
       });
 
-      it('does not accept events', function() {
-        expect(view.chopcalled).to.be.false;
-        view.$el.trigger('karate-chop');
-        expect(view.chopcalled).to.be.true;
-
-        view.chopcalled = false;
-
-        expect(view.chopcalled).to.be.false;
-
-        // Call Destroy.
-        view.destroy();
-
-        // check again.
-        view.$el.trigger('karate-chop');
-        expect(view.chopcalled).to.be.false;
-      });
-
       it('`this.model` does not accept events', function() {
         var modelchop = false;
 
@@ -102,7 +85,36 @@ define([
         expect(modelchop).to.be.false;
         view.model.trigger('karate-chop');
         expect(modelchop).to.be.false;
-      })
+      });
+
+      it('does not accept events', function() {
+        expect(view.chopcalled).to.be.false;
+        view.$el.trigger('karate-chop');
+        expect(view.chopcalled).to.be.true;
+
+        view.chopcalled = false;
+
+        expect(view.chopcalled).to.be.false;
+
+        // Call Destroy.
+        view.destroy();
+
+        // check again.
+        view.$el.trigger('karate-chop');
+        expect(view.chopcalled).to.be.false;
+      });
+
+      it('removes view from the DOM', function() {
+        var $fixture = $('<div></div>');
+
+        $fixture.html(view.el);
+
+        expect($fixture.find('.hero-view')).to.have.length(1);
+
+        view.destroy();
+
+        expect($fixture.find('.hero-view')).to.have.length(0);
+      });
     });
 
     describe('.destroyModel', function() {

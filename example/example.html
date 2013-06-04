@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Garbage Collection Model</title>
+  <style type="text/css">
+    .delete {
+      margin-left: 10px;
+      cursor: pointer; 
+    }
+  </style>
+</head>
+<body>
+
+  <section id="heroes-app"></section>
+
+  <script type="text/javascript" src="../bower_components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+  <script type="text/javascript" src="../bower_components/backbone/backbone.js"></script>
+  <script type="text/javascript" src="../backbone-gcm.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var HeroModel
+        , HeroesCollection
+        , HeroesList
+        , HeroItem
+        , heroes
+        , heroesList;
+
+      HeroModel = Backbone.Model.extend({});
+
+      HeroesCollection = Backbone.Collection.extend({
+        model: HeroModel
+      });
+
+      HeroItem = Backbone.View.extend({
+        tagname: 'li',
+
+        template: _.template($('#hero-item-template').html()),
+
+        events: {
+          "click .delete": "destroy"
+        },
+
+        render: function() {
+          this.$el.html(this.template(this.model.toJSON()));
+          return this;
+        }
+      });
+      _.extend(HeroItem.prototype, gcm);
+
+      HeroesList = Backbone.View.extend({
+        tagName: 'ul',
+
+        render: function() {
+          this.collection.each(function(hero) {
+            var heroItem = new HeroItem({model: hero});
+            this.$el.append(heroItem.render().el);
+          }, this);
+
+          return this;
+        }
+      });
+
+      heroes = new HeroesCollection([
+        {name: 'Daniel San'},
+        {name: 'Mr. Miyagi'}
+      ]);
+
+      heroesList = new HeroesList({collection: heroes});
+
+      $('#heroes-app').html(heroesList.render().el);
+    });
+  </script>
+
+  <!-- Templates -->
+  <script type="text/template" id="hero-item-template">
+    <%= name %><span class="delete">x</span>
+  </script>
+</body>
+</html>
