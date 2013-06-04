@@ -55,9 +55,9 @@ then the mixin is available as global variable `gcm`
 1. Traditional: clone the repo, and take `backbone-gmc.js` or `backbone-gmc.min.js` files out and put them wherever you keep your bakbone mixins.
 2. Or I've made this package available via the bower package manager.
 
-    $ bower install backbone-gcm --save
-
 The `--save` flag will save backbone-gcm as a dependency in your `bower.json`
+
+    $ bower install backbone-gcm --save
 
 ### [Example](id:example)
 
