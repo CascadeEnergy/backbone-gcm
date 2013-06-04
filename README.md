@@ -90,6 +90,8 @@ For good information on javascript and Backbone garbage collection:
 ### [Tests](id:tests)
 
 Tests are in the `test/` directory, they are written with mocha, and run via `testrunner.html`. To get the dependencies for testing, you must have bower installed: `npm install -g bower`.
+
+`grunt shell:bower-dev` is my very hacky way of installing the bower dev dependencies.
   
     $ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
     $ cd backbone-gcm/
@@ -97,7 +99,6 @@ Tests are in the `test/` directory, they are written with mocha, and run via `te
     $ grunt shell:bower-dev
     $ node ./util/web-server.js
 
-`grunt shell:bower-dev` is my very hacky way of installing the bower dev dependencies.
 Open your browser to <http://localhost:8000/testrunner.html>
 
 **OR**  
