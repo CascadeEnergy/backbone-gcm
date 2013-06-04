@@ -1,0 +1,31 @@
+{
+  "name": "backbone-gcm",
+  "version": "0.0.1",
+  "private": true,
+  "author": "CascadeEnergy <will.vaughn@cascadeenergy.com>",
+  "description": "Backbone.View mixin for proper garbage collection of model views (view with a `this.model`).",
+  "contributors": [
+    {
+      "name": "Will Vaughn",
+      "url": "https://github.com/nackjicholson",
+      "email": "will.vaughn@cascadeenergy.com"
+    },
+    {
+      "name": "Michael Schoenfelder",
+      "url": "https://github.com/noTxt",
+      "email": "michael.schoenfelder@cascadeenergy.com"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.10.0",
+    "mocha-phantomjs": "~2.0.2",
+    "phantomjs": "~1.9.0-6",
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-shell": "~0.2.2",
+    "grunt-nodemon": "0.0.4"
+  }
+}
