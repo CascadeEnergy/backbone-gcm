@@ -3,8 +3,7 @@
 <head>
   <title>Garbage Collection Model</title>
   <style type="text/css">
-    .delete {
-      margin-left: 10px;
+    li {
       cursor: pointer; 
     }
   </style>
@@ -33,12 +32,12 @@
       });
 
       HeroItem = Backbone.View.extend({
-        tagname: 'li',
+        tagName: 'li',
 
         template: _.template($('#hero-item-template').html()),
 
         events: {
-          "click .delete": "destroy"
+          "click": "destroy"
         },
 
         render: function() {
@@ -74,7 +73,7 @@
 
   <!-- Templates -->
   <script type="text/template" id="hero-item-template">
-    <%= name %><span class="delete">x</span>
+    <%= name %>
   </script>
 </body>
 </html>
