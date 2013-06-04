@@ -61,7 +61,7 @@ The `--save` flag will save backbone-gcm as a dependency in your `bower.json`
 
 ### [Example](id:example)
 
-There is a small how-to in this repo in at [example/example.html](https://github.com/CascadeEnergy/backbone-gcm/example/example.html). It doesn't do much, except let you click on items and "destroy" them, but it might give you some idea how to use this mixin.
+There is a small how-to in this repo at [example/example.html](https://github.com/CascadeEnergy/backbone-gcm/blob/master/example/example.html). It doesn't do much, except let you click on items and "destroy" them, but it might give you some idea how to use this mixin.
 
 To run the example.
 
