@@ -75,11 +75,34 @@ define([
 
         expect(view.chopcalled).to.be.false;
 
+        // Call Destroy.
         view.destroy();
 
+        // check again.
         view.$el.trigger('karate-chop');
         expect(view.chopcalled).to.be.false;
       });
+
+      it('`this.model` does not accept events', function() {
+        var modelchop = false;
+
+        view.model.on('karate-chop', function() {
+          modelchop = true;
+        });
+
+        view.model.trigger('karate-chop');
+        expect(modelchop).to.be.true;
+
+        modelchop = false;
+
+        // Call destroy.
+        view.destroy();
+
+        // check again.
+        expect(modelchop).to.be.false;
+        view.model.trigger('karate-chop');
+        expect(modelchop).to.be.false;
+      })
     });
 
     describe('.destroyModel', function() {
