@@ -1,7 +1,7 @@
 {
   "name": "backbone-gcm",
   "version": "0.0.0",
-  "main": "backbone-gms.js",
+  "main": "backbone-gcm.js",
   "ignore": [
     "lib",
     "test",
