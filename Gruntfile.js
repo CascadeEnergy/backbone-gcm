@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     },
     shell: {
       'mocha-phantomjs': {
-        command: 'mocha-phantomjs -R dot http://localhost:8000/testrunner.html',
+        command: 'mocha-phantomjs -R spec http://localhost:8000/testrunner.html',
         options: {
           stdout: true,
           stderr: true
