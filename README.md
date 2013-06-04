@@ -60,7 +60,7 @@ To run the example.
 
     $ git clone git@github.com:CascadeEnergy/backbone-gcm.git
     $ cd backbone-gcm/
-    $ bower install .
+    $ bower install
     $ node ./util/web-server.js
 
 and then navigate to <http://localhost:8000/example/example.html>
@@ -74,3 +74,40 @@ and then navigate to <http://localhost:8000/example/example.html>
 **destroyModel()**: This method does all the same things that the `destroy` method does, and additionally calls `this.model.destroy()` a built in Backbone.Model function which will fully destroy the model from the server.
 
 ### [Tests](id:tests)
+
+Tests are in the `test/` directory, they are written with mocha, and run via `testrunner.html`
+  
+    $ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
+    $ cd backbone-gcm/
+    $ npm install
+    $ bower install
+    $ node ./util/web-server.js
+
+Open your browser to <http://localhost:8000/testrunner.html>
+
+**OR**  
+Run them with PhantomJS on the CLI!!!!
+
+    $ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
+    $ cd backbone-gcm/
+    $ npm install
+    $ bower install
+
+Start a server in one terminal window.
+
+    $ node ./util/web-server.js
+
+OR
+
+    $ grunt nodemon
+
+And then in another terminal window.
+   
+    $ cd backbone-gcm/ 
+    $ grunt shell:mocha-phantomjs
+
+If you're developing on this project use:
+    
+    $ grunt watch
+
+and then just start developing. Grunt will run automated tests, and JSHint whenever you save files.
