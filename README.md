@@ -8,6 +8,11 @@ gcm = garbage-collect-model
 
 We have a similar mixin to release for garbage collecting list views, and it will probably be released as backbone-gcc, garbage-collection-collection-views.
 
+The whole thing should probably be renamed to:
+
+gci - garbage collect item view
+gcl - garbage collect list view
+
 Credit for both goes to [Michael Schoenfelder](https://github.com/noTXt).  
 He wrote both, I ([Will Vaughn](https://github.com/nackjicholson)) just unit tested and packaged them.
 
