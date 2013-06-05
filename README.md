@@ -17,8 +17,8 @@ Contributers:
 ### [Contents](id:contents)
 - [Usage](#usage)
 - [Install](#install)
-- [Example](#example)
 - [Why](#why)
+- [Example](#example)
 - [API](#api)
 - [Tests](#tests)
 - [Support](#support)
@@ -60,17 +60,6 @@ then the mixin is available as global variable `gcm`
 
 ---
 [top](#contents)
-### [Why](id:why)
-
-Because garbage collection is hard to understand, and when developing in Backbone, you will need to do it. This mixin can be added to any of your views that have a model. Being a mixin, it favors composability, and will not interfere with any of your inheritance trees. Another approach is to create yourself a BaseViewClass with these methods, and then derive all your classes from that base class. I favor mixins because I can configure and compose views on an individual need basis, and don't have to deal with classical inheritance.
-
-For good information on javascript and Backbone garbage collection:
-
-- [Zombie Views](http://lostechies.com/derickbailey/2011/09/15/zombies-run-managing-page-transitions-in-backbone-apps/): Derick Bailey
-- [Preventing Memory Leaks](https://paydirtapp.com/blog/backbone-in-practice-memory-management-and-event-bindings/): Nicholas Firth-McCoy
-
----
-[top](#contents)
 ### [Install](id:Install)
 
 Bower is a package manager for the web built by twitter, you should check it out, and you should download this package from bower.
@@ -83,6 +72,17 @@ The `--save` flag will save backbone-gcm as a dependency in your project's `bowe
 OR  
 
 Download this project, take `backbone-gmc.js` or `backbone-gmc.min.js` files out and put them wherever you would like.
+
+---
+[top](#contents)
+### [Why](id:why)
+
+Because garbage collection is hard to understand, and when developing in Backbone, you will need to do it. This mixin can be added to any of your views that have a model. Being a mixin, it favors composability, and will not interfere with any of your inheritance trees. Another approach is to create yourself a BaseViewClass with these methods, and then derive all your classes from that base class. I favor mixins because I can configure and compose views on an individual need basis, and don't have to deal with classical inheritance.
+
+For good information on javascript and Backbone garbage collection:
+
+- [Zombie Views](http://lostechies.com/derickbailey/2011/09/15/zombies-run-managing-page-transitions-in-backbone-apps/): Derick Bailey
+- [Preventing Memory Leaks](https://paydirtapp.com/blog/backbone-in-practice-memory-management-and-event-bindings/): Nicholas Firth-McCoy
 
 ---
 [top](#contents)
