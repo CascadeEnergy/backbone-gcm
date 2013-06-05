@@ -17,6 +17,7 @@ Credit for both goes to [Michael Schoenfelder](https://github.com/noTXt).
 - [Why](#why)
 - [API](#api)
 - [Tests](#tests)
+- [Support](#support)
 
 ### [Usage](id:usage)
 
@@ -56,23 +57,30 @@ then the mixin is available as global variable `gcm`
 
 ### [Install](id:Install)
 
-1. Traditional: clone the repo, and take `backbone-gmc.js` or `backbone-gmc.min.js` files out and put them wherever you keep your bakbone mixins.
-2. Or I've made this package available via the bower package manager.
+Bower is a package manager for the web built by twitter, you should check it out, and you should download this package from bower.
 
-The `--save` flag will save backbone-gcm as a dependency in your `bower.json`
+`$ npm install bower -g`  
+`$ bower install backbone-gcm --save `
 
-    $ bower install backbone-gcm --save
+The `--save` flag will save backbone-gcm as a dependency in your project's `bower.json` file.
+
+OR  
+
+Download this project, take `backbone-gmc.js` or `backbone-gmc.min.js` files out and put them wherever you would like.
+
 
 ### [Example](id:example)
 
-There is a small how-to in this repo at [example/example.html](https://github.com/CascadeEnergy/backbone-gcm/blob/master/example/example.html). It doesn't do much, except let you click on items and "destroy" them, but it might give you some idea how to use this mixin.
+There is a small how-to in this repository at [example/example.html](https://github.com/CascadeEnergy/backbone-gcm/blob/master/example/example.html). It allows you to click on items and destroy them. It's not much but it might give you some idea how to use this mixin.
 
 To run the example.
 
-    $ git clone git@github.com:CascadeEnergy/backbone-gcm.git
-    $ cd backbone-gcm/
-    $ bower install
-    $ node ./util/web-server.js
+```
+$ git clone git@github.com:CascadeEnergy/backbone-gcm.git
+$ cd backbone-gcm/
+$ bower install
+$ node ./util/web-server.js
+```
 
 and then navigate to <http://localhost:8000/example/example.html>
 
@@ -87,45 +95,49 @@ For good information on javascript and Backbone garbage collection:
 
 ### [API](id:api)
 
-**destroy()**: Destroys your view and sets it up for garbage collection by unbinding events on the view's model, undelegating its own events, and removing it from the DOM.
+- **destroy()**: Destroys your view and sets it up for garbage collection by unbinding events on the view's model, undelegating its own events, and removing it from the DOM.
 
-**destroyModel()**: This method does all the same things that the `destroy` method does, and additionally calls `this.model.destroy()` a built in Backbone.Model function which will fully destroy the model from the server.
+- **destroyModel()**: This method does all the same things that the `destroy` method does, and additionally calls `this.model.destroy()` a built in Backbone.Model function which will fully destroy the model from the server.
 
 ### [Tests](id:tests)
 
 Tests are in the `test/` directory, they are written with mocha, and run via `testrunner.html`. To get the dependencies for testing, you must have npm and bower installed: `npm install -g bower`.
   
-    $ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
-    $ cd backbone-gcm/
-    $ npm install
-    $ bower install
-    $ node ./util/web-server.js
-
+```
+$ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
+$ cd backbone-gcm/
+$ npm install
+$ bower install
+$ node ./util/web-server.js
+```
 Open your browser to <http://localhost:8000/testrunner.html>
 
 **OR**  
 Run them with PhantomJS on the CLI!!!!
 
-    $ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
-    $ cd backbone-gcm/
-    $ npm install
-    $ bower install
+```
+$ git clone git@github.com:CascadeEnergy/backbone-gcm.git  
+$ cd backbone-gcm/
+$ npm install
+$ bower install
+```
 
-Start a server in one terminal window.
-
-    $ node ./util/web-server.js
-
-OR
-
-    $ grunt nodemon
+Start a server in one terminal window.  
+`$ node ./util/web-server.js` OR `$ grunt nodemon`
 
 And then in another terminal window.
-   
-    $ cd backbone-gcm/ 
-    $ grunt shell:mocha-phantomjs
 
-If you're developing on this project use:
-    
-    $ grunt watch
+```   
+$ cd backbone-gcm/ 
+$ grunt shell:mocha-phantomjs
+```
+
+If you're developing on this project use: `$ grunt watch`
 
 and then just start developing. Grunt will run automated tests, and JSHint whenever you save files.
+
+### [Support](id:support)
+
+Make an issue.
+
+Come talk to me on IRC freenode: `#sensei`
