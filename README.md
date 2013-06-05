@@ -6,7 +6,7 @@ Backbone.View mixin for proper garbage collection of model views (view with a `t
 
 gcm = garbage-collect-model
 
-We have a similar mixin to release for list views (views that store data utilize a collection instead of a model), and it will probably be released as backbone-gcc (garbage-collect-collection), or backbone-gcl (garbage-collect-list).
+We have a similar mixin to release for list views (views that utilize a collection instead of a model), and it will probably be released as backbone-gcc (garbage-collect-collection), or backbone-gcl (garbage-collect-list).
 
 Contributers:
 
