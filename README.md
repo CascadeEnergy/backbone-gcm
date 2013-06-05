@@ -97,7 +97,7 @@ For good information on javascript and Backbone garbage collection:
 
 - **destroy()**: Destroys your view and sets it up for garbage collection by unbinding events on the view's model, undelegating its own events, and removing it from the DOM.
 
-- **destroyModel()**: This method does all the same things that the `destroy` method does, and additionally calls `this.model.destroy()` a built in Backbone.Model function which will fully destroy the model from the server.
+- **destroyModel()**: This method calls the above `this.destroy()` method. All of that happens, and additionally `this.model.destroy()` is called to as its name implies. Destroys the model. For details read the [Model-destroy documentation](http://backbonejs.org/#Model-destroy).
 
 ### [Tests](id:tests)
 
