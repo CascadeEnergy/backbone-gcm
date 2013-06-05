@@ -15,13 +15,13 @@ Contributers:
 
 ---
 ### [Contents](id:contents)
-- #### [Usage](#usage)
-- #### [Install](#install)
-- #### [Example](#example)
-- #### [Why](#why)
-- #### [API](#api)
-- #### [Tests](#tests)
-- #### [Support](#support)
+- [Usage](#usage)
+- [Install](#install)
+- [Example](#example)
+- [Why](#why)
+- [API](#api)
+- [Tests](#tests)
+- [Support](#support)
 
 ---
 ### [Usage](id:usage)
