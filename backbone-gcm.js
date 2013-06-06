@@ -21,6 +21,7 @@
         root.gcm = factory();
   }
 }(this, function () {
+  'use strict';
 
   // This is the gcm mixin.
   return {
