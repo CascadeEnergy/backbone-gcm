@@ -38,8 +38,8 @@ Contributers:
 
           // Set up an event or something appropriate to control when
           // you want to release view for garbage collection.
-          // destroy is a method added by gcm
-          this.on('someEvent', this.destroy, this);
+          // free is a method added by gcm
+          this.on('someEvent', this.free, this);
         }
       });
 
@@ -104,7 +104,7 @@ and then navigate to <http://localhost:8000/example/example.html>
 [top](#contents)
 ### [API](id:api)
 
-- **destroy()**: Destroys your view and sets it up for garbage collection by unbinding events on the view's model, undelegating its own events, and removing it from the DOM.
+- **free()**: Frees a view up for garbage collection by unbinding events on the view's model, undelegating its own events, and removing it from the DOM.
 
 - **destroyModel()**: This method destroys your view, as well as destroying `this.model` by calling `this.model.destroy`. This will trigger a sync request to remove your model from the server. For details read the [Model-destroy documentation](http://backbonejs.org/#Model-destroy).
 
