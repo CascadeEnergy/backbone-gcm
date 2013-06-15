@@ -33,29 +33,21 @@ define([
 
     beforeEach(function() {
       var miyagi = new HeroModel({name: 'Mr. Miyagi'});
-      view = new HeroView({model: miyagi});
+      this.view = view = new HeroView({model: miyagi});
     });
 
     afterEach(function() {
-      view.off();
-      view = undefined;
+      this.view.off();
+      delete this.view;
     });
 
-    describe('.destroy', function() {
+    describe('.free', function() {
       it('calls `this.model.off`', function(done) {
         view.model.off = function() {
           done();
         };
 
-        view.destroy();
-      });
-
-      it('calls `this.undelegateEvents`', function(done) {
-        view.undelegateEvents = function() {
-          done();
-        };
-
-        view.destroy();
+        view.free();
       });
 
       it('calls `this.remove`', function(done) {
@@ -63,7 +55,7 @@ define([
           done();
         };
 
-        view.destroy();
+        view.free();
       });
 
       it('`this.model` does not accept events', function() {
@@ -78,8 +70,8 @@ define([
 
         modelchop = false;
 
-        // Call destroy.
-        view.destroy();
+        // Call free.
+        view.free();
 
         // check again.
         expect(modelchop).to.be.false;
@@ -96,10 +88,10 @@ define([
 
         expect(view.chopcalled).to.be.false;
 
-        // Call Destroy.
-        view.destroy();
+        // Call free.
+        view.free();
 
-        // check again.
+        // check again. Event shouldn't go though.
         view.$el.trigger('karate-chop');
         expect(view.chopcalled).to.be.false;
       });
@@ -111,15 +103,15 @@ define([
 
         expect($fixture.find('.hero-view')).to.have.length(1);
 
-        view.destroy();
+        view.free();
 
         expect($fixture.find('.hero-view')).to.have.length(0);
       });
     });
 
     describe('.destroyModel', function() {
-      it('calls `this.destroy`', function(done) {
-        view.destroy = function() {
+      it('calls `this.free`', function(done) {
+        view.free = function() {
           done();
         };
 
