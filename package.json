@@ -1,6 +1,6 @@
 {
   "name": "backbone-gcm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "author": "CascadeEnergy <will.vaughn@cascadeenergy.com>",
   "description": "Backbone.View mixin for proper garbage collection of model views (view with a `this.model`).",
